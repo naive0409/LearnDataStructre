@@ -139,15 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\大学\课件教材\数据结构与算法\线性表&amp;二叉树例程\单链表程序\LinkList.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\大学\课件教材\数据结构与算法\线性表&amp;二叉树例程\单链表程序\main.cpp" />
     <ClCompile Include="1.cpp" />
-    <ClCompile Include="2.cpp" />
-    <ClCompile Include="class_test.cpp" />
-    <ClCompile Include="fun_test.cpp" />
+    <ClCompile Include="LinkList.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\..\大学\课件教材\数据结构与算法\线性表&amp;二叉树例程\单链表程序\LinkList.h" />
+    <ClInclude Include="LinkList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

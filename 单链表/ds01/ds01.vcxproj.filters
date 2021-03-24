@@ -18,24 +18,15 @@
     <ClCompile Include="1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="class_test.cpp">
+    <ClCompile Include="LinkList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="fun_test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\大学\课件教材\数据结构与算法\线性表&amp;二叉树例程\单链表程序\main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\大学\课件教材\数据结构与算法\线性表&amp;二叉树例程\单链表程序\LinkList.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\..\大学\课件教材\数据结构与算法\线性表&amp;二叉树例程\单链表程序\LinkList.h">
+    <ClInclude Include="LinkList.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
