@@ -5,24 +5,24 @@ const int NULL =0;
 template <class T>
 struct Node 
 {
-	T data;					//æ•°æ®åŸŸ
-	struct Node <T> * next; //æŒ‡é’ˆåŸŸï¼Œåœ¨è¿™é‡Œ<T>å¯çœç•¥
+	T data;					//Êı¾İÓò
+	struct Node <T> * next; //Ö¸ÕëÓò£¬ÔÚÕâÀï<T>¿ÉÊ¡ÂÔ
 };
 
 template <class T>
 class LinkList
 {
 public:
-	LinkList(){first = new Node <T>; first->next = 0;}//æ— å‚æ„é€ å‡½æ•° //=NULL?
-	LinkList(T a [], int n);//æœ‰å‚æ„é€ å‡½æ•°ï¼Œä½¿ç”¨å«æœ‰nä¸ªå…ƒç´ çš„æ•°ç»„aåˆå§‹åŒ–å•é“¾è¡¨
-	~LinkList();			//ææ„å‡½æ•°
-	int GetLength();		//è·å–çº¿æ€§è¡¨çš„é•¿åº¦
-	Node <T> * Get(int i);			//è·å–çº¿æ€§è¡¨ç¬¬iä¸ªä½ç½®ä¸Šçš„å…ƒç´ ç»“ç‚¹åœ°å€
-	int Locate (T x);		//æŸ¥æ‰¾çº¿æ€§è¡¨ä¸­å€¼ä¸ºxçš„å…ƒç´ ï¼Œæ‰¾åˆ°åè¿”å›å…¶ä½ç½®
-	void Insert (int i, T x);//åœ¨çº¿æ€§è¡¨çš„ç¬¬iä¸ªä½ç½®ä¸Šæ’å…¥å€¼ä¸ºxçš„æ–°å…ƒç´ 
-	T Delete(int i);		//åˆ é™¤çº¿æ€§è¡¨ç¬¬iä¸ªå…ƒç´ ï¼Œå¹¶å°†è¯¥å…ƒç´ è¿”å›
-	void PrintList();		//æŒ‰æ¬¡åºéå†çº¿æ€§è¡¨ä¸­çš„å„ä¸ªæ•°æ®å…ƒç´  
+	LinkList(){first = new Node <T>; first->next = 0;}//ÎŞ²Î¹¹Ôìº¯Êı //=NULL?
+	LinkList(T a [], int n);//ÓĞ²Î¹¹Ôìº¯Êı£¬Ê¹ÓÃº¬ÓĞn¸öÔªËØµÄÊı×éa³õÊ¼»¯µ¥Á´±í
+	~LinkList();			//Îö¹¹º¯Êı
+	int GetLength();		//»ñÈ¡ÏßĞÔ±íµÄ³¤¶È
+	Node <T> * Get(int i);			//»ñÈ¡ÏßĞÔ±íµÚi¸öÎ»ÖÃÉÏµÄÔªËØ½áµãµØÖ·
+	int Locate (T x);		//²éÕÒÏßĞÔ±íÖĞÖµÎªxµÄÔªËØ£¬ÕÒµ½ºó·µ»ØÆäÎ»ÖÃ
+	void Insert (int i, T x);//ÔÚÏßĞÔ±íµÄµÚi¸öÎ»ÖÃÉÏ²åÈëÖµÎªxµÄĞÂÔªËØ
+	T Delete(int i);		//É¾³ıÏßĞÔ±íµÚi¸öÔªËØ£¬²¢½«¸ÃÔªËØ·µ»Ø
+	void PrintList();		//°´´ÎĞò±éÀúÏßĞÔ±íÖĞµÄ¸÷¸öÊı¾İÔªËØ 
 	Node <T> * GetFirst(){return first;}
 private:
-	Node <T>* first;		//å¤´æŒ‡é’ˆ
+	Node <T>* first;		//Í·Ö¸Õë
 };
