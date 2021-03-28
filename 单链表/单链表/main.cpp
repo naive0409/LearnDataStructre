@@ -2,25 +2,25 @@
 #include "linklist.cpp"
 
 
-class ComplexNumber	//×Ô¶¨ÒåÀà£º¸´ÊıÀà
+class ComplexNumber	//è‡ªå®šä¹‰ç±»ï¼šå¤æ•°ç±»
 {
 public:
-	ComplexNumber(){a=0;b=0;}	//ÎŞ²Î¹¹Ôìº¯Êı
-	ComplexNumber(double a1, double b1){a=a1;b=b1;}	//ÓĞ²Î¹¹Ôìº¯Êı
-	bool operator ==(ComplexNumber & cn)	//==²Ù×÷·ûÖØÔØ
+	ComplexNumber(){a=0;b=0;}	//æ— å‚æ„é€ å‡½æ•°
+	ComplexNumber(double a1, double b1){a=a1;b=b1;}	//æœ‰å‚æ„é€ å‡½æ•°
+	bool operator ==(ComplexNumber & cn)	//==æ“ä½œç¬¦é‡è½½
 	{return (a == cn.a && b == cn.b); }
 private:
-	double a; //a + biµÄÊµ²¿Ğé²¿
-	double b; //a + biµÄĞé²¿Ğé²¿
+	double a; //a + biçš„å®éƒ¨è™šéƒ¨
+	double b; //a + biçš„è™šéƒ¨è™šéƒ¨
 };
 
-int maintest()//²âÊÔÊı¾İÀàĞÍÎª¸´Êı
+int maintest()//æµ‹è¯•æ•°æ®ç±»å‹ä¸ºå¤æ•°
 {
 	LinkList <ComplexNumber> cnlist;
 	cnlist.Insert (1,ComplexNumber(1,2));
 	ComplexNumber cn(1,2);
 	int pos = cnlist.Locate(cn);
-	cout << "(1,2)µÄÎ»ÖÃÎª"<< pos << endl;
+	cout << "(1,2)çš„ä½ç½®ä¸º"<< pos << endl;
 	return 0;
 }
 
@@ -32,10 +32,10 @@ int main()
 	list.Insert (1,0);
 	list.PrintList ();
 	int x = list.Delete (8);
-	cout << "É¾³ıÔªËØ£º"<< x << endl;
+	cout << "åˆ é™¤å…ƒç´ ï¼š"<< x << endl;
 	list.PrintList ();
 	int p = list.Locate (4);
-	cout << "ÔªËØ4µÄÎ»ÖÃ£º" << p << endl;
-	maintest(); //²âÊÔÊı¾İÀàĞÍÎª¸´Êı
+	cout << "å…ƒç´ 4çš„ä½ç½®ï¼š" << p << endl;
+	maintest(); //æµ‹è¯•æ•°æ®ç±»å‹ä¸ºå¤æ•°
 	return 0;
 }
