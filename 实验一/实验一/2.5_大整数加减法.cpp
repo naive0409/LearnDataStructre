@@ -159,7 +159,7 @@ veryLong veryLong::minus(veryLong l)
 int main()
 {
 	veryLong L1("500");
-	veryLong L2("500");
+	veryLong L2("501");
 	veryLong L3 = L1.plus(L2);
 	//L2.print(L1.plus(&L2));
 	L3.print();
