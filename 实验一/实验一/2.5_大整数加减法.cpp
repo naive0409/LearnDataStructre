@@ -104,7 +104,7 @@ void veryLong::print()
 	do
 	{cout << p->data;
 		p = p->next;
-	} while (p != front);
+	} while (p != rear);
 	cout << endl;
 }
 
@@ -156,12 +156,30 @@ veryLong veryLong::minus(veryLong l)
 	return l;
 }
 
+void randVeryLong(veryLong x, int n)
+{
+	for (int i = 0 ;i<n;i++)
+	{
+		x.addF(rand() % 10);
+	}
+}
+
+
 int main()
 {
-	veryLong L1("500");
-	veryLong L2("501");
-	veryLong L3 = L1.plus(L2);
-	//L2.print(L1.plus(&L2));
-	L3.print();
+	srand(time(NULL));
+
+	veryLong L1("");
+	veryLong L2("");
+	veryLong L3("0");
+	randVeryLong(L1, 1+rand() % 50);
+	randVeryLong(L2, 1+rand() % 50);
+
+	L3 = L1.plus(L2);
+
+	cout << "L1=\t"; L1.print();
+	cout << "L2=\t"; L2.print();
+	cout << "L1+L2=\t"; L3.print();
+
 	return 0;
 }
