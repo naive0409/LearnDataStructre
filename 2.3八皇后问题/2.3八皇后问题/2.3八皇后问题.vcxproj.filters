@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2.5_大整数加减法.cpp">
+    <ClCompile Include="2.3八皇后问题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bfa829bf-e497-4b1d-8fc2-bca5d290ff7b}</ProjectGuid>
-    <RootNamespace>实验一</RootNamespace>
+    <ProjectGuid>{d0b7f324-84fd-458b-b3bd-a64299de8d0b}</ProjectGuid>
+    <RootNamespace>My23八皇后问题</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>2.5大整数加减法</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="2.5_大整数加减法.cpp" />
+    <ClCompile Include="2.3八皇后问题.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
