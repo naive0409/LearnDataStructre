@@ -13,20 +13,46 @@
 using namespace std;
 
 int answer = 0;
-void queen(bool arr[8][8], int row);
-bool check(bool arr[8][8], int row, int column);
-void print(bool arr[8][8]);
 
-int main()
+void print(bool arr[8][8])
 {
-    bool chessboard[8][8];
+    answer++;
+    printf("Answer No.%d:\n", answer);
     for (int i = 0; i < 8; i++)
-        for (int j = 0; j < 8; j++)
-            chessboard[i][j] = 0;
+    {
+        for (int j = 0; j < 8; j++) cout << arr[i][j] << " ";
+        cout << endl;
+    }
+    cout << "\n\n";
+}
 
-    queen(chessboard, 0);
-    cout << "We have " << answer << " answers to the question in total." << endl;
-    return 0;
+bool check(bool arr[8][8], int row, int column)
+{
+    int i, j;
+
+    //在一列吗（不用判定是不是在同一行）
+    for (i = 0; i < row; i++)
+        if (arr[i][column]) return 0;//同一列已经有棋子了
+
+    //斜对角线:左下右上
+    i = row - 1;
+    j = column + 1;
+    while (i >= 0 && j <= 7)
+    {
+        if (arr[i][j])  return 0;//对角线已经有棋子了
+        i--; j++;
+    }
+
+    //斜对角线:左上右下
+    i = row - 1;
+    j = column - 1;
+    while (i >= 0 && j >= 0)
+    {
+        if (arr[i][j])  return 0;//对角线已经有棋子了
+        i--; j--;
+    }
+
+    return 1;
 }
 
 void queen(bool arr[8][8], int row)
@@ -41,46 +67,19 @@ void queen(bool arr[8][8], int row)
             else queen(arr, row + 1);
             //能放就先放这儿,再考虑下一个棋子(它一定在下一行)
         }
-        arr[row][c] = 0;//放不了就别放了
-    }//看看右边的位置能不能放
+        arr[row][c] = 0;//放不了就别放了，
+    }//然后再看看右边的位置能不能放
 }
 
-bool check(bool arr[8][8], int row, int column)
+int main()
 {
-    int i, j;
-    //在一列吗
-    for (i = 0; i < row; i++)
-    {
-        if (arr[i][column])     return 0;
-    }
-    i = row - 1;
-    j = column - 1;
-    //斜对角线:左上右下
-    while (i >= 0 && j >= 0)
-    {
-        if (arr[i][j])  return 0;
-        i--;j--;
-    }
-    i = row - 1;
-    j = column + 1;
-    //斜对角线:左下右上
-    while (i >= 0 && j <= 7)
-    {
-        if (arr[i][j])
-        {return 0;}
-        i--;j++;
-    }
-    return 1;
-}
-
-void print(bool arr[8][8])
-{
-    ++answer;
-    printf("Answer No.%d:\n" , answer);
+    bool chessboard[8][8];
     for (int i = 0; i < 8; i++)
-    {
-        for (int j = 0; j < 8; j++) cout << arr[i][j] << " ";
-        cout << endl;
-    }
-    cout << "\n\n";
+        for (int j = 0; j < 8; j++)
+            chessboard[i][j] = 0;//初始化数组
+
+    queen(chessboard, 0);//从第一行开始放棋子吧
+
+    cout << "We have " << answer << " answers to the question in total." << endl;
+    return 0;
 }
