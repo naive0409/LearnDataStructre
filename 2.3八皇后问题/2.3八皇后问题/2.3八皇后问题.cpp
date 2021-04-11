@@ -28,28 +28,29 @@ void print(bool arr[8][8])
 
 bool check(bool arr[8][8], int row, int column)
 {
-    int i, j;
-
-    //在一列吗（不用判定是不是在同一行）
-    for (i = 0; i < row; i++)
-        if (arr[i][column]) return 0;//同一列已经有棋子了
+    int r, c;
+    //不会在一行里放两个棋子，所以不用判定是不是在同一行
+    
+    //在一列吗
+    for (r = 0; r < row; r++)
+        if (arr[r][column]) return 0;//同一列已经有棋子了
 
     //斜对角线:左下右上
-    i = row - 1;
-    j = column + 1;
-    while (i >= 0 && j <= 7)
+    r = row - 1;
+    c = column + 1;
+    while (r >= 0 && c <= 7)
     {
-        if (arr[i][j])  return 0;//对角线已经有棋子了
-        i--; j++;
+        if (arr[r][c])  return 0;//对角线已经有棋子了
+        r--; c++;
     }
 
     //斜对角线:左上右下
-    i = row - 1;
-    j = column - 1;
-    while (i >= 0 && j >= 0)
+    r = row - 1;
+    c = column - 1;
+    while (r >= 0 && c >= 0)
     {
-        if (arr[i][j])  return 0;//对角线已经有棋子了
-        i--; j--;
+        if (arr[r][c])  return 0;//对角线已经有棋子了
+        r--; c--;
     }
 
     return 1;
