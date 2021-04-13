@@ -19,7 +19,8 @@ void print(bool arr[8][8])
     answer++;
     printf("Answer No.%d:\n", answer);
     for (int i = 0; i < 8; i++)
-    {
+    {   
+        cout << "\t";
         for (int j = 0; j < 8; j++) cout << arr[i][j] << " ";
         cout << endl;
     }
@@ -68,19 +69,18 @@ void queen(bool arr[8][8], int row)
             else queen(arr, row + 1);
             //能放就先放这儿,再考虑下一个棋子(它一定在下一行)
         }
-        arr[row][c] = 0;//放不了就别放了，
-    }//然后再看看右边的位置能不能放
+        arr[row][c] = 0;    //放不了就别放了，
+    }                       //然后再看看右边的位置能不能放(回溯)
 }
 
-int main()
+void main()
 {
     bool chessboard[8][8];
     for (int i = 0; i < 8; i++)
         for (int j = 0; j < 8; j++)
             chessboard[i][j] = 0;//初始化数组
 
-    queen(chessboard, 0);//从第一行开始放棋子吧
+    queen(chessboard, 0);//从第一行开始放棋子
 
     cout << "We have " << answer << " answers to the question in total." << endl;
-    return 0;
 }
