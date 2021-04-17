@@ -58,10 +58,10 @@ bool check(bool arr[8][8], int row, int column)
 }
 
 void queen(bool arr[8][8], int row)
-{
+{//判断函数单写，递归函数不用返回也行
     for (int c = 0; c < 8; c++)
     {
-        arr[row][c] = 1;//放一个棋子试试
+        arr[row][c] = 1;    //放一个棋子试试
         if (check(arr, row, c))//如果能放的话
         {
             if (row == 7) print(arr);
