@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d49f431c-ec83-40a0-97ef-a9ca005b6bb8}</ProjectGuid>
+    <ProjectGuid>{50cad09a-6ca4-40eb-a846-617301b338a3}</ProjectGuid>
     <RootNamespace>HuffmanTree</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -139,13 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="huffman.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="queue.cpp" />
+    <ClInclude Include="huffmanTree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="huffman.h" />
-    <ClInclude Include="queue.h" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
