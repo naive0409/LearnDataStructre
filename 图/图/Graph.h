@@ -83,7 +83,7 @@ void MGraph<T, N>::DFS(int v)
 	*/
 
 
-	*/
+	
 
 	/*以上为递归，以下为非递归*/
 
@@ -94,7 +94,7 @@ void MGraph<T, N>::DFS(int v)
 	while (top != -1)//只要栈不空，就重复
 	{
 		int i;
-		for (i = 0; i < vNum; i++)
+		for (i = 0; i < vNum; i++)//搜索可用的节点
 		{
 			//如果某个节点i与本结点v之间有边相连，且没有被访问过
 			if (arc[v][i] == 1 && visited[i] == 0)
@@ -104,11 +104,14 @@ void MGraph<T, N>::DFS(int v)
 				cout << 'v' << v + 1 << ' ';
 				visited[v] = 1;
 				break;//(*)
-				//如果找到了能走的路，就往前走一步，然后退出循环
+				//如果找到了能走的路，就往前走一步，兵器退出循环（停止搜索可用的节点）
 			}
 		}
 
-		//与(*)配合：退出循环时i
+		/*
+		与(*)配合：退出循环时i=vNum,说明前边循环每次都不符合if的条件，
+		即这个节点v相邻的所有节点都访问过了，或者这是个死胡同
+		*/
 		if (i == vNum)
 		{
 			top--;
@@ -123,17 +126,19 @@ void MGraph<T, N>::BFS(int v)
 {
 	
 	int Queue[100];
-	int f, r;
+	int f, r;//front,rear
 	f = r = -1;
 	Queue[++r] = v;//入队 
 	visited[v] = 1;
+
 	while (f != r) //队列不空 
 	{
 		v = Queue[++f];//出队
 		cout << 'v' << v + 1 << ' ';
-		for (int i = 0; i < vNum; i++)  //find v 所有未访问的邻接点，入队 
+		//某节点出队时，它的所有未访问的邻接点入队
+		for (int i = 0; i < vNum; i++)
 			if (arc[v][i] == 1 && visited[i] == 0)
-			{
+			{ 
 				visited[i] = 1;
 				Queue[++r] = i;
 			}

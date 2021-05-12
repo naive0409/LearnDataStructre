@@ -5,14 +5,20 @@ int main()
 	MGraph<char, 5> g("abc.txt");
 	g.PrintGraph();
 
-	g.SetVisited();
 	cout << "深度优先遍历：";
+	g.SetVisited();
+
+	//只有一个g.DFS(0)导致无法输出最后一个节点
 	for (int i = 0; i < g.GetVNum(); i++)
 		if (g.GetVisited(i) == 0)
 			g.DFS(i);
+
+
+
 	cout << "\n广度优先遍历：";
 	g.SetVisited();
 	g.BFS(0);
+
 	return 0;
 }
 
