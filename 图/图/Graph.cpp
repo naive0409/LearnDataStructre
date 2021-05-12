@@ -9,6 +9,7 @@ int main()
 	g.SetVisited();
 
 	//只有一个g.DFS(0)导致无法输出最后一个节点
+	
 	for (int i = 0; i < g.GetVNum(); i++)
 		if (g.GetVisited(i) == 0)
 			g.DFS(i);
