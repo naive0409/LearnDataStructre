@@ -31,6 +31,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="color.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="Graph.h">
       <Filter>头文件</Filter>
     </ClInclude>
